@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a class="button_style_back" href="{% url 'home_page' %}">Back</a>
+
+
+    <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+    <label for="size">Please add size: </label>
+    <input type="number" name="size" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>
+</body>
+</html>

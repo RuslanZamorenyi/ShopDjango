@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form enctype="multipart/form-data", method="POST">
+        {% csrf_token %}
+        <h3>Please choose size:</h3>
+        <select name="id_sizes">
+            {% for list_size in list_sizes %}
+            <option><p>{{list_size.size}}</p></option>
+        {% endfor %}
+            </select>
+        <h3>Please choose colour:</h3>
+        <select name="id_colours">
+            {% for list_colour in list_colours %}
+            <option><p>{{list_colour.colour}}</p></option>
+        {% endfor %}
+            </select>
+        <h3>Please choose name of brand:</h3>
+        <select name="id_brand">
+            {% for list_brand in list_brands %}
+            <option><p>{{list_brand.name}}</p></option>
+        {% endfor %}
+            </select>
+
+
+            <p><input type="submit" value="OK"></p>
+            <a class="button_style_back" href="{% url 'home_page' %}"><button>Back</button></a></p>
+
+    </form>
+</body>
+</html>
